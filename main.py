@@ -4,14 +4,14 @@ def main():
     parcer = Parcer(
         'https://5element.by/catalog/571-buterbrodnicy',
         'c-list__center',
-                
     )
+
     try:
-        while True:
-            parcer.getlinks()
-            parcer.go_to_next_page()
-    except:
-        print('67')
+        parcer.accept_cookie()
+        parcer.getlinks()
+        parcer.creating_csv_file()
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
